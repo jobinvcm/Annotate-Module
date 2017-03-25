@@ -25,13 +25,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="annotate.module" pinned="false" current-in-tab="true">
+      <file leaf-file-name="annotate.module" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/annotate/annotate.module">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
               <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
               <folding>
                 <element signature="e#7#122#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="annotate.admin.inc" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/annotate/annotate.admin.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+              <folding>
+                <element signature="e#6#80#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -47,6 +59,7 @@
       <list>
         <option value="$PROJECT_DIR$/sites/all/modules/custom/annotate/annotate.info" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/annotate/annotate.module" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/annotate/annotate.admin.inc" />
       </list>
     </option>
   </component>
@@ -252,12 +265,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490476544243</updated>
-      <workItem from="1490476557631" duration="1006000" />
+      <workItem from="1490476557631" duration="1116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1006000" />
+    <option name="totallyTimeSpent" value="1116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="462" y="23" width="910" height="808" extended-state="0" />
@@ -307,6 +320,16 @@
           <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
           <folding>
             <element signature="e#7#122#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/annotate/annotate.admin.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding>
+            <element signature="e#6#80#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
