@@ -2,3 +2,6 @@ name = Annotate Module
 description = to annotate nodes in the system
 package = Custom Modules
 core = 7.x
+files[] = annotate.admin.inc
+files[] = annotate.install
+files[] = annotate.module
