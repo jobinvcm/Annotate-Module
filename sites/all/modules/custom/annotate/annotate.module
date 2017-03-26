@@ -38,7 +38,8 @@ function annotate_menu() {
 /**
  * Implements hook_node_load()
  */
-function annotate_node_load($nodes, $types) {
+function annotate_node_load($nodes, $types)
+{
     global $user;
 // Check to see if the person viewing the node is the author. If not then
 // hide the annotation.
@@ -47,3 +48,4 @@ function annotate_node_load($nodes, $types) {
             unset($node->annotation);
         }
     }
+}

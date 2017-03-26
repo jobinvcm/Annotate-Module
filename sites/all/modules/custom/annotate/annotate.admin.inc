@@ -75,4 +75,3 @@ function annotate_admin_settings_submit($form, $form_state) {
         }
     } // End foreach loop.
 }
-www

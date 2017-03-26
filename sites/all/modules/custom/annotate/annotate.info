@@ -1,7 +1,8 @@
-name = Annotate Module
-description = to annotate nodes in the system
-package = Custom Modules
+name = Annotate
+description = "Allows users to annotate nodes."
+package = Custom Module
 core = 7.x
-files[] = annotate.admin.inc
-files[] = annotate.install
 files[] = annotate.module
+files[] = annotate.install
+files[] = annotate.admin.inc
+configure=admin/config/content/annotate/settings
