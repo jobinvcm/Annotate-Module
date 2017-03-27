@@ -14,7 +14,7 @@
  */
 function annotate_menu() {
     $items['admin/config/annotate'] = array(
-        'title' => 'Node annotation',
+        'title' => 'Node Annotation',
         'description' => 'Adjust node annotation options.',
         'position' => 'right',
         'weight' => -5,
