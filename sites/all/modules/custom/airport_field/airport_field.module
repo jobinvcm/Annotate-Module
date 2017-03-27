@@ -48,7 +48,21 @@ function airport_field_field_widget_form(&$form, &$form_state, $field, $instance
     );
     return $element;
 }
+/*
+ * hook_field_is_empty()
+ */
+function airport_field_field_is_empty($item, $field) {
+    if (empty($item['code'])) {
+        return TRUE;
+    }
+    return FALSE;
+}
+/*
+ * implements hook_field_validate()
+ */
+function hook_field_validate($entity_type, $entity, $field, $instance, $langcode, $items, &$errors) {
 
+}
 /*
  * Implements hook_field_formatter_info()
  */
