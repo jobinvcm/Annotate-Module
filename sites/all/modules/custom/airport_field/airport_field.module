@@ -12,29 +12,34 @@ function airport_field_field_info()
 {
     $field = array();
     $field['airport_field'] = array(
-        'label' => 'Airports',
+        'label' => t('Airports'),
         'description' => t('Provides list of airports with name codes'),
-        'default_widget' => 'aiport_default',
-        'default_formatter' => 'airport_code_format',
+        'default_widget' => 'airport_code',
+        'default_formatter' => 'airport_raw',
     );
     return $field;
 
 
 }
 /*
- * Implements hook_field_schema()
+ * Implements hook_filed_widget_info();
  */
-function airport_field_field_schema(){
-    $columns = array(
-        'airport' => array('type' => 'varchar','length'=>20,'not null'=> FALSE),
-    );
-    $index = array(
-        'airport' => array('airport');
-    );
+function airport_field_field_widget_info(){
     return array(
-        'columns'=> $columns,
-        'indexes' => $index,
+        'airport_code'=>array(
+            'label' =>' Autocomplete Code widget',
+            'field types' => array('airport_field'),
+        ),
+        'airport_name'=>array(
+            'label' => 'Autocomplete Name Widget',
+            'field types' => array('airport_field'),
+        ),
+        'airport_name_code' => array(
+            'label' => 'Autocmplete both code and name Widget',
+            'field types' => array('airport_field'),
+        ),
     );
+
 }
 
 /*
@@ -42,10 +47,17 @@ function airport_field_field_schema(){
  */
 function airport_field_field_formatter_info(){
     return array(
-        'autocomplete_airport_code'=>array(
+        'airport_raw'=>array(
         'label' => t('Autocomplete Airport'),
-        'field types' => array('autocomplete_airport'),
-    ),
-);
+        'field types' => array('airport_field'),
+        ),
+
+    );
 }
+
+
+
+
+
+
 

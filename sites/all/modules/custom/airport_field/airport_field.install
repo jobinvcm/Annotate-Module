@@ -1,0 +1,36 @@
+<?php
+function airport_field_field_schema($field) {
+
+    $columns = array(
+      'name' => array(
+        'type' => 'varchar',
+        'length'=> 50,
+        'not null' => FALSE,
+      ),
+      'code'=> array(
+        'type' =>'varchar',
+        'length' => 6,
+        'not null' => TRUE
+      ),
+      'country' =>array(
+        'type'=>'varchar',
+        'length' => 128,
+        'not null'=> FALSE,
+      ),
+      'continent'=>array(
+        'type' => 'varchar',
+        'length' => 20,
+        'not null'
+      ),
+    );
+
+    $indexes = array(
+        'code'=> array('code'),
+    );
+
+    return array(
+        'columns' => $columns,
+        'indexes' => $indexes,
+        );
+ }
+
