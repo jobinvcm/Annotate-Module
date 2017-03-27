@@ -1,0 +1,28 @@
+<?php
+
+/*
+ * @file
+ * Testing menu system Fully
+ */
+
+/*
+ * implementing hook_menu();
+ *
+ */
+
+function menutest_menu(){
+    $items = array();
+    $items['page_1'] = array(
+        'title' => 'Page 1',
+        'page callback' => 'page_1',
+        'access arguments' => array('access content'),
+        'type' => MENU_LOCAL_TASK,
+    );
+    return $items;
+}
+
+
+function page_1(){
+    return "Hello World";
+}
+
