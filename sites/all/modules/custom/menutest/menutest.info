@@ -1,0 +1,4 @@
+name = Menu Test
+description = testng menu system fully
+core = 7.x
+package = Custom Modules
