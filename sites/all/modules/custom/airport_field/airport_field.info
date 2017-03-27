@@ -5,3 +5,4 @@ package = Custom Modules
 files[] = airport_field.install
 files[] = airports.json
 stylesheets[all][] = airport.css
+scripts[] = airport.js

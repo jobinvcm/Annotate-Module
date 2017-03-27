@@ -38,14 +38,7 @@ function airport_field_field_widget_info(){
  * implements hook_field_widget_form()
  */
 function airport_field_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
-    $airport_raw_json= file_get_contents(drupal_get_path('module','airport_field')."/airports.json");
-    $airports_array = json_decode($airport_raw_json,TRUE);
-    $airports_codes_array = array_column($airports_array,"iata");
-    echo "<ul id ='airport-codes-list'>";
-    foreach($airports_codes_array as $code){
-        echo "<li>".$code."</li>";
-    }
-    echo "</ul>";
+
     $element['code'] = array(
         '#type' => 'textfield',
         '#prefix' => 'Airport Code',
