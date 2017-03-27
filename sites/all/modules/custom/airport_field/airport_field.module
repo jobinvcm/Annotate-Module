@@ -8,12 +8,44 @@
  * implements hook_field_info()
  */
 
-function airport_field_field_info(){
+function airport_field_field_info()
+{
     $field = array();
     $field['airport_field'] = array(
         'label' => 'Airports',
         'description' => t('Provides list of airports with name codes'),
         'default_widget' => 'aiport_default',
-        'default_formatter'=> 'airport_code_format',
-    )
+        'default_formatter' => 'airport_code_format',
+    );
+    return $field;
+
+
 }
+/*
+ * Implements hook_field_schema()
+ */
+function airport_field_field_schema(){
+    $columns = array(
+        'airport' => array('type' => 'varchar','length'=>20,'not null'=> FALSE),
+    );
+    $index = array(
+        'airport' => array('airport');
+    );
+    return array(
+        'columns'=> $columns,
+        'indexes' => $index,
+    );
+}
+
+/*
+ * Implements hook_field_formatter_info()
+ */
+function airport_field_field_formatter_info(){
+    return array(
+        'autocomplete_airport_code'=>array(
+        'label' => t('Autocomplete Airport'),
+        'field types' => array('autocomplete_airport'),
+    ),
+);
+}
+
