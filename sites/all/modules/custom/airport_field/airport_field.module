@@ -41,6 +41,19 @@ function airport_field_field_widget_info(){
     );
 
 }
+/*
+ * implements hook_field_widget_form()
+ */
+function airport_field_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
+    $element['code'] = array(
+        '#type' => 'textfield',
+        '#prefix' => 'Airport Code',
+        '#attributes' => array('class'=>array('airport-codes')),
+        '#size' => 4,
+        '#default_value' => isset($items[$delta]['code']) ? $items[$delta]['code']: '',
+    );
+    return $element;
+}
 
 /*
  * Implements hook_field_formatter_info()
