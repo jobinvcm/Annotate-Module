@@ -2,3 +2,6 @@ name = Airport Field
 description = Provides information regarding Airports in the world
 core = 7.x
 package = Custom Modules
+files[] = airport_field.install
+files[] = airports.json
+stylesheets[all][] = airport.css
