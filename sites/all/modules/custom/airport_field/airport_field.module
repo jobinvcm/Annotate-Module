@@ -1,0 +1,19 @@
+<?php
+/*
+ * @file trying to create a airpot field module
+ * extensively using field api
+ */
+
+/*
+ * implements hook_field_info()
+ */
+
+function airport_field_field_info(){
+    $field = array();
+    $field['airport_field'] = array(
+        'label' => 'Airports',
+        'description' => t('Provides list of airports with name codes'),
+        'default_widget' => 'aiport_default',
+        'default_formatter'=> 'airport_code_format',
+    )
+}
