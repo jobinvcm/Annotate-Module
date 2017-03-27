@@ -22,14 +22,27 @@ function menutest_menu(){
     $items['page_1/subpage']= array(
         'title' =>t('Subpage 1'),
         'page callback'=> 'subpage_1',
-        'access callback' => TRUE,
+        'access callback' => 'user_access',
+        'access arguments' => array('access subpage'),
         'menu' => 'navigation',
         'file' => 'greeting.item.inc',
         'type' => MENU_NORMAL_ITEM,
     );
     return $items;
 }
+/*
+ * Implementing hook_permission()
+ */
 
+function menutest_hook_permission()
+{
+    $permission = array();
+    $permission['access subpage'] = array(
+        'title' => t('Access subpage'),
+        'description' =>t('Accessing the created subpage in page'),
+    );
+
+}
 
 function page_1($first_name = '', $last_name = ''){
     return t("Hello World @first_name @last_name",array('@first_name'=>$first_name,'@last_name'=> $last_name));

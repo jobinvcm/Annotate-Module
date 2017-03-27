@@ -1,0 +1,4 @@
+name = Airport Field
+description = Provides information regarding Airports in the world
+core = 7.x
+package = Custom Modules
