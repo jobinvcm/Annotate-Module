@@ -15,14 +15,23 @@ function menutest_menu(){
     $items['page_1'] = array(
         'title' => 'Page 1',
         'page callback' => 'page_1',
+        'page arguments' => array("jobin","mathew"),
         'access arguments' => array('access content'),
-        'type' => MENU_LOCAL_TASK,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    $items['page_1/subpage']= array(
+        'title' =>t('Subpage 1'),
+        'page callback'=> 'subpage_1',
+        'access callback' => TRUE,
+        'menu' => 'navigation',
+        'file' => 'greeting.item.inc',
+        'type' => MENU_NORMAL_ITEM,
     );
     return $items;
 }
 
 
-function page_1(){
-    return "Hello World";
+function page_1($first_name = '', $last_name = ''){
+    return t("Hello World @first_name @last_name",array('@first_name'=>$first_name,'@last_name'=> $last_name));
 }
 
