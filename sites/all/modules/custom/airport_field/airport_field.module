@@ -60,8 +60,21 @@ function airport_field_field_is_empty($item, $field) {
 /*
  * implements hook_field_validate()
  */
-function hook_field_validate($entity_type, $entity, $field, $instance, $langcode, $items, &$errors) {
-
+function airport_field_field_validate($entity_type, $entity, $field, $instance, $langcode, $items, &$errors) {
+    $airport_raw_json= file_get_contents(drupal_get_path('module','airport_field')."/airports.json");
+    $airports_array = json_decode($airport_raw_json,TRUE);
+    $airports_codes_array = array_column($airports_array,"iata");
+    foreach ($items as $delta => $item) {
+        dsm($airports_codes_array);
+        if (!empty($item['code'])) {
+            if(!array_key_exists(drupal_strtoupper($item['code']),$airports_codes_array)){
+                $errors[$field['field_name']][$langcode][$delta][] = array(
+                    'error' => 'code_not_found',
+                    'message' => t('%code : Code not found',array('%code'=>$instance['label']))
+                );
+            }
+        }
+    }
 }
 /*
  * Implements hook_field_formatter_info()
